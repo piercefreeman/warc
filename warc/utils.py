@@ -62,11 +62,7 @@ class FilePart:
         self.fileobj = fileobj
         self.length = length
         self.offset = 0
-
-        if length > 0:
-            self.buf = self.fileobj.read(1)
-        else:
-            self.buf = ""
+        self.buf = self.fileobj.read(0)
 
     def read(self, size=-1):
         if size == -1:
